@@ -1,6 +1,5 @@
 import Navbar from './Navbar';
 import Home from './Home';
-import './App.css';
 
 // function App() {
 //   const name = "Akshay";
@@ -67,4 +66,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
