@@ -11,10 +11,7 @@ function App() {
 
     < User />
     < User2 name="Akshay Anil" age={22} />
-
-
     </div>
-
   );
 }
 
