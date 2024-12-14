@@ -1,5 +1,6 @@
 import Navbar from './Navbar';
 import Home from './Home';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // function App() {
 //   const name = "Akshay";
@@ -55,15 +56,16 @@ import Home from './Home';
 
 function App() {
   return (
-    <div className="App">
-      
-      <Navbar></Navbar>
-
-      <div className="content">
-        <Home></Home>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
       </div>
-
-    </div>
+    </Router>
   );
 }
 
