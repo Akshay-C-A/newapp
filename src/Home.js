@@ -39,12 +39,13 @@ const Home = () => {
     //   ]);
 
     const [blogs,setBlogs] = useState(null);
+    const [isPending,setIsPending] = useState(true);
 
 
-    const handleDelete = (id) => {
-        const newBlogs = blogs.filter( (blog) => blog.id !== id);
-        setBlogs(newBlogs);
-    }
+    // const handleDelete = (id) => {
+    //     const newBlogs = blogs.filter( (blog) => blog.id !== id);
+    //     setBlogs(newBlogs);
+    // }
     
     // const [name,setName] = useState("Akshay C A");
 
@@ -59,12 +60,15 @@ const Home = () => {
         })
         .then((data) => {
             setBlogs(data);
+            setIsPending(false);
         })
     },[])
 
     return ( 
         <div className="home">
-            {blogs && <BlogList blogs={blogs} title="All blogs" handleDelete={handleDelete}/>}
+            {/* {blogs && <BlogList blogs={blogs} title="All blogs" handleDelete={handleDelete}/>} */}
+            {isPending && <div><h2>Loading.....</h2></div>}
+            {blogs && <BlogList blogs={blogs} title="All blogs"/>}
             {/* <BlogList blogs={blogs.filter( (blog) => blog.author === "mario")} title="Mario's blogs" handleDelete={handleDelete} /> */}
             {/* {name} <br /> */}
             {/* <button onClick={ () => { setName("Akshay Anil")}}>Click Here</button> */}
